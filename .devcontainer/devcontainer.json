@@ -1,0 +1,22 @@
+{
+  "name": "R Environment",
+  "image": "mcr.microsoft.com",
+  "features": {
+    "ghcr.io/rocker-org/devcontainer-features/r-rig:1": {
+      "installRStudio": false
+    },
+    "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "REditorSupport.r",
+        "REditorSupport.r-debugger"
+      ],
+      "settings": {
+        "r.plot.view": "browser"
+      }
+    }
+  },
+  "postCreateCommand": "Rscript -e 'install.packages(\"languageserver\")'"
+}
